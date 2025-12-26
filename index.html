@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Byakuya</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                font-family: "Georgia", "Times New Roman", serif;
+                line-height: 1.8;
+                color: #1a1a1a;
+                box-sizing: border-box;
+                transition: background-color 0.5s linear; /* 滑らかな色の変化 */
+            }
+            
+            .container {
+                max-width: 600px;
+                text-align: left;
+            }
+            
+            h1 {
+                font-size: 1.15rem;
+                font-weight: normal;
+                margin-bottom: 3.5rem;
+                letter-spacing: 0.3em;
+            }
+            
+            .content {
+                font-size: 0.95rem;
+                letter-spacing: 0.01em;
+            }
+            
+            .tagline {
+                margin-top: 5rem;
+                font-style: italic;
+                font-size: 0.8rem;
+                color: #999;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Byakuya</h1>
+            <div class="content">
+                Byakuya is a design framework that examines how objects acquire value after completion. <br><br>
+                It adopts a post-sustainability perspective in which time, use, and responsibility function as design elements. Meaning accumulates gradually through repetition rather than instant completion. <br><br>
+                Design is reframed as stewardship.
+            </div>
+            <div class="tagline">
+                Records persist beyond ownership.
+            </div>
+        </div>
+        
+        <script>
+            // 間欠カオス（ロジスティック写像）を用いた1/fゆらぎのシミュレーション
+            let x = Math.random();
+            
+            function updateBackground() {
+                // ロジスティック写像により次の値を計算
+                x = 3.9 * x * (1 - x);
+                
+                // x(0〜1)の値を背景の明るさ(90%〜100%)に変換
+                // 変化をより分かりやすくするため、少し暗めの範囲(85%〜100%)まで広げています
+                const brightness = 85 + (x * 15);
+                document.body.style.backgroundColor = `hsl(0, 0%, ${brightness}%)`;
+                
+                // 次の変化までの時間をランダムに変えることで、より自然なゆらぎに
+                const nextUpdate = 500 + Math.random() * 1000;
+                setTimeout(updateBackground, nextUpdate);
+            }
+            
+            updateBackground();
+        </script>
+    </body>
+</html>
