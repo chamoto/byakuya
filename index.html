@@ -12,9 +12,8 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        /* 日本語の美しさを引き出すフォントスタックに変更 */
         font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "HGS Mincho E", "Georgia", "Times New Roman", serif;
-        line-height: 2.0; /* 日本語に合わせて行間を少し広げました */
+        line-height: 2.0;
         color: #1a1a1a;
         box-sizing: border-box;
         transition: background-color 0.5s linear;
@@ -34,14 +33,14 @@
       
       .content {
         font-size: 0.95rem;
-        letter-spacing: 0.05em; /* 日本語の可読性のために少し広げました */
-        text-align: justify; /* 両端揃えで整然とさせる */
+        letter-spacing: 0.05em;
+        text-align: justify;
       }
       
       .tagline {
         margin-top: 5rem;
         font-size: 0.8rem;
-        color: #666; /* 少しコントラストを上げました */
+        color: #666;
       }
       
       .patent-status {
@@ -56,31 +55,35 @@
   <body>
     <div class="container">
       <h1>Byakuya</h1>
+
       <div class="content">
-        Byakuyaとは、事物が完成した後にいかにして価値を獲得していくかを検証するデザインフレームワークである。<br><br>
-        時間、使用、そして責任を設計要素として機能させる「ポスト・サステナビリティ」の視座を採用し、即時的な完成ではなく、反復を通じた緩やかな意味の堆積を志向する。<br><br>
-        デザインを、スチュワードシップ（未来への信託）として再定義する試み。
+        Byakuyaとは、完成のあとに始まる価値のふるまいを観測するための設計である。<br><br>
+
+        事物は、完成した瞬間に終わるのではない。<br>
+        時間、使用、記録、継承。<br>
+        それらの反復によって、価値は静かに変化していく。<br><br>
+
+        Byakuyaは、その変化をただ保存するのではなく、<br>
+        ポストサステナブルの視座から、未来に向けた構造として捉え直す。<br><br>
+
+        所有の外側に、まだ言語化されていない層がある。<br>
+        Byakuyaは、その輪郭に触れる。
       </div>
+
       <div class="tagline">
-        記録は、所有を超えて永続する。
-        <span class="patent-status">特許出願中</span>
-        <span class="patent-status">2026 A' Design Award 受賞</span>
+        記録は、所有を超えて残る。
+        <span class="patent-status">2026 A’ Design Award Winner</span>
+        <span class="patent-status">Patent Pending</span>
       </div>
     </div>
-    
+
     <script>
-      // 間欠カオス（ロジスティック写像）を用いた1/fゆらぎのシミュレーション
       let x = Math.random();
       
       function updateBackground() {
-        // ロジスティック写像により次の値を計算
         x = 3.9 * x * (1 - x);
-        
-        // x(0〜1)の値を背景の明るさ(85%〜100%)に変換
         const brightness = 85 + (x * 15);
         document.body.style.backgroundColor = `hsl(0, 0%, ${brightness}%)`;
-        
-        // 次の変化までの時間をランダムに変えることで、より自然なゆらぎに
         const nextUpdate = 500 + Math.random() * 1000;
         setTimeout(updateBackground, nextUpdate);
       }
